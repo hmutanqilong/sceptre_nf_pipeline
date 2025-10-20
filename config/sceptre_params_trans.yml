@@ -1,0 +1,31 @@
+# Sceptre pipeline parameters
+# trans massive parallel
+
+# --- Input Files ---
+sceptre_object_fp: "/project/xuanyao/qilong/Project/Core_Gene_Programs_II/02_sceptre_analysis/RPE1_Replogle_2022/Sceptre_Object/sceptre_object.rds"
+response_odm_fp: "/project/xuanyao/qilong/Project/Core_Gene_Programs_II/02_sceptre_analysis/RPE1_Replogle_2022/Sceptre_Object/gene.odm"
+grna_odm_fp: "/project/xuanyao/qilong/Project/Core_Gene_Programs_II/02_sceptre_analysis/RPE1_Replogle_2022/Sceptre_Object/grna.odm"
+formula_object: "/project/xuanyao/qilong/Project/Core_Gene_Programs_II/02_sceptre_analysis/RPE1_Replogle_2022/Preparation_for_Association/formula_object_rpe1.rds"
+discovery_pairs: "trans"
+positive_control_pairs: "/project/xuanyao/qilong/Project/Core_Gene_Programs_II/02_sceptre_analysis/RPE1_Replogle_2022/Preparation_for_Association/pc_pairs.rds"
+
+# --- Output Directory ---
+output_directory: "/project/xuanyao/qilong/Project/Core_Gene_Programs_II/02_sceptre_analysis/RPE1_Replogle_2022/Association_Output"
+
+# --- Analysis Settings ---
+side: "both"
+grna_integration_strategy: "singleton"
+control_group: "nt_cells"
+grna_assignment_method: "thresholding"
+threshold: 1
+multiple_testing_method: "BH"
+multiple_testing_alpha: 0.1
+resampling_mechanism: "permutations"
+resampling_approximation: "skew_normal"
+use_parquet: "true"
+
+# --- Pod & Resource Settings ---
+pair_pod_size: 50000
+grna_pod_size: 260
+# run_association_analysis_time_per_pair: "60m"
+# run_association_analysis_memory: "50GB"
